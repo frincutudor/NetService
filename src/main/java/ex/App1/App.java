@@ -13,16 +13,19 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App 
 {
+    // TODO tudor, change to annotation injection.
     public static void main( String[] args )
     {
-    	System.out.println(new File(".").getAbsolutePath());
-    	
     	URL resource = App.class.getResource("Config.xml");
     	
     	ApplicationContext context =
     		    new ClassPathXmlApplicationContext(new String[] {resource.toString()});
     	
+    	// TODO tudor, dc beanul network se numeste DAQ ? 
     	Network networkObj=(Network) context.getBean("DAQ");
+    	
+    	 //TODO tudor,  schimba architectura ca sa consumi obiectele in caller
+    	// astfel un get x poate fi refolosit.
     	networkObj.showNetwork();
     	
     	
