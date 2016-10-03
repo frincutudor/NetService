@@ -22,8 +22,9 @@ public class App
     	ApplicationContext context =
     		    new ClassPathXmlApplicationContext(new String[] {resource.toString()});
     	
-    	Network networkObj=(Network) context.getBean("DAQ");
-    	networkObj.showNetwork();
+    	networkController networkObj=(networkController) context.getBean("ControllerBean");
+    	
+    	networkObj.printNetwork();
     	
     	
     }

@@ -3,6 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="ControllerBean" class="ex.App1.networkController">
+       <property name="obj" ref="DAQ"></property>
+    
+    
+    </bean>
+ 
+
 
 	<bean id="DAQ" class="ex.App1.Network">
 		<property name="s1" value="PC1"></property>

@@ -1,6 +1,6 @@
 package ex.App1;
 
-public class Network {
+public class Network implements networkInteface {
 
 	private String s1;
 	private String s2;
@@ -42,7 +42,7 @@ public class Network {
 	}
 	
 	
-	void showNetwork()
+	public void  showNetwork()
 	{
 		System.out.println("PCs in network : ");
 		System.out.println(s1);
