@@ -2,6 +2,13 @@ package ex.App1;
 
 public class Network implements networkInteface {
 
+    //TODO tudor ,  change this to Set< String>
+    // trebuie de refacut pe 3 laiere 
+    // view , service, dao
+    // view e un fel de entry point in app , fie serviciwii web , controllere http servlete
+    // service e layerul de busines logica 
+    // dao sunt repositoriile responsabile stocarii obiectelor
+    
 	private String s1;
 	private String s2;
 	private String s3;

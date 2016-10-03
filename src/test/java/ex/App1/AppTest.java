@@ -7,6 +7,9 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
+// TODO tudor, unde tu testezi ce ai facut ? 
+// tu ca dev trebuie sa garantezi ca ceea ce ai livrat lucreaza 100%\
+
 public class AppTest 
     extends TestCase
 {
