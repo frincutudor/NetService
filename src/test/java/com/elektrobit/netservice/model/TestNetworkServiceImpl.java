@@ -2,9 +2,6 @@ package com.elektrobit.netservice.model;
 
 import junit.framework.TestCase;
 
-
-
-
 import com.elektrobit.netservice.dao.*;
 
 import java.io.Console;
@@ -30,45 +27,23 @@ import static org.junit.Assert.*;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes={NetworkServiceImpl.class,DeviceRepositoryImpl.class})
+@ContextConfiguration(classes = { NetworkServiceImpl.class,
+		DeviceRepositoryImpl.class })
 public class TestNetworkServiceImpl {
-	
-//	@Configuration
-//    static class Config {
-//
-//        // this bean will be injected into the OrderServiceTest class
-//        @Bean
-//        public DeviceRepositoryImpl deviceRepos() {
-//            DeviceRepositoryImpl repoDevice  = new DeviceRepositoryImpl();
-//            // set properties, etc.
-//            return repoDevice;
-//        }
-//    }
-	
-	 
-	
-	
+
 	@Autowired
 	NetworkServiceImpl netDevice;
-  
-	
+
 	@Test
-	public void testGetDevices() 
-	{
+	public void testGetDevices() {
 		final Set<Device> set = ImmutableSet.of(new Device("TUFR261616"),
 				new Device("RM12312312"), new Device("PEOV1231312"));
-		
-		
+
 		// = new NetworkServiceImpl();
-		//netDevice.setDeviceRepository(new DeviceRepositoryImpl());
-	
-		
-        
-		assertEquals(netDevice.getDevices() , set);
-       
-		
-		
-		
+		// netDevice.setDeviceRepository(new DeviceRepositoryImpl());
+
+		assertEquals(netDevice.getDevices(), set);
+
 	}
-	
+
 }
