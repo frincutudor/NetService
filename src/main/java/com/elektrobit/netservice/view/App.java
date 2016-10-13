@@ -20,6 +20,12 @@ import com.elektrobit.netservice.model.NetworkService;
 import com.elektrobit.netservice.model.NetworkServiceImpl;
 import com.google.common.base.MoreObjects;
 
+// TODO Tudpor java doc
+// TODO Tudor author
+// TODO Tudor please format you sources and 
+// get used to format after each save overwise you'll have bilions of code conflicts
+//TODO Tudor next task change everything to annotations, get rid of xml
+// then we will create a REST endoint to serve devices
 public class App {
 	
 	public static void main(String[] args) {

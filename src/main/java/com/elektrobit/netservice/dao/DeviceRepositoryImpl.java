@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import com.google.common.collect.ImmutableSet;
 
 
-
+ // TODO Tudor dc repository e un spring Configuration ? 
 @Configuration
 public class DeviceRepositoryImpl implements DeviceRepository {
 

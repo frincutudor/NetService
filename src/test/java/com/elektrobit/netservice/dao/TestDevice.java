@@ -26,7 +26,9 @@ public class TestDevice {
 	public void testEquals_Simetric() {
 		Device d1 = new Device("leptop");
 		Device d2 = new Device("leptop");
-
+		// TODO Tudor 
+		// asert true d1 eq d2
+		// asert true d2 eq d1
 		assertTrue(d1.equals(d2) == d2.equals(d1));
 
 	}
@@ -36,7 +38,11 @@ public class TestDevice {
 		Device d1 = new Device("leptop");
 		Device d2 = new Device("leptop");
 		Device d3 = new Device("leptop");
-
+		// TODO Tudor 
+        // asert true d1 eq d2
+		// asert true d2 eq d3
+		// asert true d1 eq d3
+		
 		assertTrue(d1.equals(d2) == d2.equals(d3));
 
 	}
@@ -45,7 +51,9 @@ public class TestDevice {
 	public void testEquals_Consistent() {
 		Device d1 = new Device("leptop");
 		Device d2 = new Device("leptop");
-
+		// TODO Tudor 
+        // asert true d1 eq d2
+		// asert true d1 eq d2
 		assertTrue(d1.equals(d2) == d1.equals(d2));
 
 	}
@@ -54,6 +62,9 @@ public class TestDevice {
 	public void testEquals_WhenDevicesAreDifferent() {
 		Device d1 = new Device("leptop");
 		Device d2 = new Device("computer");
+		
+		// TODO Tudor 
+        // asert false d1 eq d2
 		assertTrue(d1.equals(d2) == false);
 
 	}
@@ -69,7 +80,8 @@ public class TestDevice {
 	public void testHashCode_HashCodeShouldBeEqual() {
 		Device d1 = new Device("Calculator");
 		Device d2 = new Device("Calculator");
-
+		// TODO Tudor add
+        // asert false d1.hashCode() == d1.hashCode()
 		assertTrue(d1.hashCode() == d2.hashCode());
 
 	}

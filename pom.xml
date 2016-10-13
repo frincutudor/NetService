@@ -3,11 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ex</groupId>
-	<!--//TODO tudor, group ceva de genul com.elektrobit.training, app name 
+	<!--
+	//TODO tudor, group ceva de genul com.elektrobit.training, app name 
 		trebuie sa fie NetService -->
 	<artifactId>App1</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
+
 
 	<name>App1</name>
 	<url>http://maven.apache.org</url>

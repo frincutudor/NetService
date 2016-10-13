@@ -2,6 +2,7 @@ package com.elektrobit.netservice.dao;
 
 import java.util.Objects;
 
+// TODO Tudor why this is in Dao package ?
 public final class Device {
 
 	private final String name;

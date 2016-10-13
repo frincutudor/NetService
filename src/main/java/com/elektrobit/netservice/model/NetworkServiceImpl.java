@@ -14,6 +14,10 @@ import com.google.common.base.MoreObjects;
 
 import org.springframework.stereotype.*;
 
+// TODO Tudor where is the java doc
+// why this is in the model package
+// why is this a spring configuration
+// we were working with spring xml configuration when did we switch to annotations ?
 @Configuration
 public class NetworkServiceImpl implements NetworkService {
 	

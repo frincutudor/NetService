@@ -11,6 +11,7 @@ import com.google.common.collect.ImmutableSet;
 
 public class TestApp {
 
+//TODO Tudor remove this     
  @Test 
   public void  testMain()
  {
