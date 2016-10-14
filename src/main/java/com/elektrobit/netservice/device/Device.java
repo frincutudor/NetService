@@ -1,8 +1,15 @@
-package com.elektrobit.netservice.dao;
+package com.elektrobit.netservice.device;
 
 import java.util.Objects;
 
-// TODO Tudor why this is in Dao package ?
+/**
+ * @Author Frincu Tudor <Tudor.Frincu@elektrobit.com>
+ * 
+ *         Device class used by DeviceRepositoryImpl
+ */
+
+// TODO Tudor why this is in Dao package ? - moved it to a different package -
+// DONE
 public final class Device {
 
 	private final String name;
@@ -29,16 +36,13 @@ public final class Device {
 		}
 
 		return false;
-		
-		
+
 	}
 
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "["+this.name +"]";
+		return "[" + this.name + "]";
 	}
-	
-	
 
 }

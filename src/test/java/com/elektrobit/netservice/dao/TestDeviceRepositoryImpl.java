@@ -6,6 +6,7 @@ import java.util.Set;
 
 import org.junit.Test;
 
+import com.elektrobit.netservice.device.Device;
 import com.google.common.collect.ImmutableSet;
 
 public class TestDeviceRepositoryImpl {
@@ -18,7 +19,7 @@ public class TestDeviceRepositoryImpl {
 
 		DeviceRepositoryImpl devRep = new DeviceRepositoryImpl();
 
-		assertEquals(devRep.getSet(), set);
+		assertEquals(devRep.getDevices(), set);
 
 	}
 

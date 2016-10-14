@@ -1,9 +1,10 @@
-package com.elektrobit.netservice.dao;
+package com.elektrobit.netservice.device;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import com.elektrobit.netservice.dao.Device;
+
+import com.elektrobit.netservice.device.Device;
 
 public class TestDevice {
 

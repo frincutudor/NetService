@@ -1,51 +1,45 @@
 package com.elektrobit.netservice.view;
 
-/**
- * Hello world!
- *
- */
-import java.io.File;
-import java.net.URI;
-import java.net.URL;
 import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.stereotype.Component;
 
-import com.elektrobit.netservice.dao.Device;
-import com.elektrobit.netservice.model.NetworkService;
-import com.elektrobit.netservice.model.NetworkServiceImpl;
-import com.google.common.base.MoreObjects;
+import com.elektrobit.netservice.device.Device;
+import com.elektrobit.netservice.service.NetworkService;
 
+/**
+ * @Author Frincu Tudor <Tudor.Frincu@elektrobit.com>
+ * 
+ *         This class creates the configurations needed for the spring framework
+ * 
+ * 
+ * 
+ * 
+ */
 // TODO Tudpor java doc
-// TODO Tudor author
-// TODO Tudor please format you sources and 
-// get used to format after each save overwise you'll have bilions of code conflicts
-//TODO Tudor next task change everything to annotations, get rid of xml
+
+// TODO Tudor please format you sources and
+// get used to format after each save overwise you'll have bilions of code
+// conflicts - Okey
+// TODO Tudor next task change everything to annotations, get rid of xml -DONE
+// this
 // then we will create a REST endoint to serve devices
+
 public class App {
-	
+
 	public static void main(String[] args) {
 
-		URL resource = App.class.getResource("Config.xml");
-       
-		ApplicationContext context = new ClassPathXmlApplicationContext(
-				new String[] { resource.toString() });
-		
+		AbstractApplicationContext context = new AnnotationConfigApplicationContext(
+				AppConfig.class);
+
 		NetworkService networkObj = (NetworkService) context
-				.getBean("ControllerBean");
-      
+				.getBean("application");
+
 		Set<Device> set = networkObj.getDevices();
 
 		System.out.println(set);
-		
-		
-		
-		
-
+		context.close();
 	}
 
 }
