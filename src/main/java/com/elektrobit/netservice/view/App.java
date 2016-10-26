@@ -4,6 +4,11 @@ import java.util.Set;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.elektrobit.netservice.device.Device;
 import com.elektrobit.netservice.service.NetworkService;
@@ -12,34 +17,27 @@ import com.elektrobit.netservice.service.NetworkService;
  * @Author Frincu Tudor <Tudor.Frincu@elektrobit.com>
  * 
  *         This class creates the configurations needed for the spring framework
- * 
- * 
- * 
+ *         and then post the information on the server
  * 
  */
-// TODO Tudpor java doc
 
-// TODO Tudor please format you sources and
-// get used to format after each save overwise you'll have bilions of code
-// conflicts - Okey
-// TODO Tudor next task change everything to annotations, get rid of xml -DONE
-// this
-// then we will create a REST endoint to serve devices
-
+@Controller
 public class App {
 
-	public static void main(String[] args) {
+	@RequestMapping(value = "/Device")
+	public ModelAndView postForm() {
 
+		ModelAndView model = new ModelAndView("Device");
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(
 				AppConfig.class);
 
 		NetworkService networkObj = (NetworkService) context
 				.getBean("application");
 
-		Set<Device> set = networkObj.getDevices();
+		Set<Device> device = networkObj.getDevices();
+		model.addObject("device", device);
 
-		System.out.println(set);
-		context.close();
+		return model;
 	}
 
 }
