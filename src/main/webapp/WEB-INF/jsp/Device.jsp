@@ -1,37 +1,104 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+</head>
 
 <html>
-
 <body>
-  <center>
-   <h1>Device in Network:</h1>
-  <br>
-  <br>
-    
-   <table border="2">
-   
-   <c:if test="${not empty device}">
-           <c:set var="i" value="1"/>
-		
-			<c:forEach var="deviceValue" items="${device}">
-				<tr>
-				<td>Device number ${i} :</td>
-				<td>${deviceValue}</td>
-				</tr>
-				
-				<c:set var="i" value="${i + 1}" />
-			</c:forEach>
-		
+	<center>
+		<h2>Device in Store</h2>
+		<br>
+		<form action="/NetService/Search" method="get">
 
-	</c:if>
-	
-	</table>
+			<input type="text" name="fname"></input><br>
+
+			<button type="submit">
+				<i class="material-icons">search</i>
+			</button>
+
+		</form>
+
 	</center>
-</body>
 
+	<form action="/NetService/Category" method="get">
+		<p align="center">
+			<select name="category">
+
+				<c:if test="${not empty category}">
+					<c:forEach var="categoryValue" items="${category}">
+						<option value="${categoryValue.getIdCategory()}">${categoryValue.getCategoryName()}</option>
+					</c:forEach>
+				</c:if>
+
+			</select>
+			<button type="submit">Submit</button>
+
+		</p>
+	</form>
+	<form action="/NetService/AddCategory" method="get">
+		<p align="center">
+			<input type="submit" value="Add category"></input>
+		</p>
+	</form>
+
+
+	<center>
+		<table border="1" width="700">
+			<tr>
+				<td><b>Device name</b></td>
+				<td><b>Price</b></td>
+				<td><b>Quantity</b></td>
+				<td><b>Actions</b></td>
+				<td><a href="<c:url value="/ViewAdd" />"><i
+						class="material-icons" style="font-size: 24px; color: green">add_box</i></a></td>
+			</tr>
+
+			<c:if test="${not empty device}">
+
+
+				<c:forEach var="deviceValue" items="${device}">
+					<tr>
+
+						<td>${deviceValue.getName()}</td>
+						<td>${deviceValue.getPrice()}</td>
+						<td>${deviceValue.getQuantity()}</td>
+						<td><form:form action="/NetService/Delete/${deviceValue.getId()}" method="delete"> 
+								<button type="submit"> 
+								<i class="material-icons">delete</i> 
+ 								</button>
+							</form:form>
+						
+						
+						
+<%-- 						<form action="/NetService/Delete/${deviceValue.getId()}" --%>
+<%-- 								method="post"> --%>
+<!-- 								<button type="submit"> -->
+<!-- 									<i class="material-icons">delete</i> -->
+<!-- 								</button> -->
+<%-- 							</form></td> --%>
+							
+							
+							
+							
+						<%-- <td><a href="<c:url  value="/Delete?id=${deviceValue.getId()}"  />"><i
+								class="material-icons">delete</i></a></td>--%>
+						<td><a
+							href="<c:url value="/Edit?id=${deviceValue.getId()}" />"><i
+								class="material-icons">settings</i></a></td>
+					</tr>
+				</c:forEach>
+
+
+			</c:if>
+
+		</table>
+
+		</form>
+
+	</center>
+
+
+</body>
 </html>
